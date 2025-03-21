@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Botão com Ação</title>
+</head>
+<body>
+    <h1>Enviar dados para o WhatsApp</h1>
+    <form>
+        <label for="apto">Apartamento:</label><br>
+        <input type="text" id="apto" name="apto"><br><br>
+        <label for="veiculo">Veículo:</label><br>
+        <input type="text" id="veiculo" name="veiculo"><br><br>
+        <label for="data">Data de saída:</label><br>
+        <input type="date" id="data" name="data"><br><br>
+        <label for="hora">Hora de saída:</label><br>
+        <input type="time" id="hora" name="hora"><br><br>
+        <button type="button" onclick="redirecionar()">Enviar para WhatsApp</button>
+    </form>
+
+    <script>
+        function redirecionar() {
+            var apto = document.getElementById("apto").value;
+            var veiculo = document.getElementById("veiculo").value;
+            var data = document.getElementById("data").value;
+            var hora = document.getElementById("hora").value;
+
+            // URL com parâmetros para o WhatsApp
+            var url = `https://wa.me/XXXXXXXXXXX?text=Apartamento:%20${apto}%20Veículo:%20${veiculo}%20Data:%20${data}%20Hora:%20${hora}`;
+            
+            // Redireciona para a URL com os parâmetros
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
